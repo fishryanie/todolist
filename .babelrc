@@ -1,0 +1,28 @@
+{
+    "presets": ["@babel/preset-react", "@babel/preset-typescript"],
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "root": ["./src"],
+          "alias": {
+            "@i18n": "./src/i18n",
+            "@store": "./src/store/store",
+            "@utils": "./src/utils",
+            "@mocks": "./src/mocks",
+            "@pages": "./src/pages",
+            "@hooks": "./src/hooks",
+            "@services": "./src/services",
+            "@actions": "./src/store/actions",
+            "@routes": "./src/routes",
+            "@configs": "./src/configs",
+            "@firebase": "./src/firebase",
+            "@templates": "./src/templates",
+            "@constants": "./src/constants",
+            "@components": "./src/components"
+          }
+        }
+      ]
+    ]
+  }
+  

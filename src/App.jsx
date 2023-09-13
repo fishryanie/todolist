@@ -1,35 +1,36 @@
 /** @format */
 
 import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
+import { Select } from './components';
 
-import 'react-datepicker/dist/react-datepicker.css';
 import './App.css';
 
 function App() {
-  const [startDate, setStartDate] = useState(new Date());
+  // const [startDate, setStartDate] = useState(new Date());
+  // const [selectedPerson, setSelectedPerson] = useState(people[0]);
 
-  function toggleNav() {
-    // Toggle: Hamburger Open/Close
-    hamburgerMenu.classList.toggle("active");
-    //   Toggle: Menu Active
-    overlay.classList.toggle("overlay-active");
-    if (overlay.classList.contains("overlay-active")) {
-      // Animate In - Overlay
-      overlay.classList.replace("overlay-slide-left", "overlay-slide-right");
-      // Animate In - Nav Items
-      navAnimation("out", "in");
-    } else {
-      // Animate Out - Overlay
-      overlay.classList.replace("overlay-slide-right", "overlay-slide-left");
-      // Animate Out - Nav Items
-      navAnimation("in", "out");
-    }
-  }
+  // function toggleNav() {
+  //   // Toggle: Hamburger Open/Close
+  //   hamburgerMenu.classList.toggle('active');
+  //   //   Toggle: Menu Active
+  //   overlay.classList.toggle('overlay-active');
+  //   if (overlay.classList.contains('overlay-active')) {
+  //     // Animate In - Overlay
+  //     overlay.classList.replace('overlay-slide-left', 'overlay-slide-right');
+  //     // Animate In - Nav Items
+  //     navAnimation('out', 'in');
+  //   } else {
+  //     // Animate Out - Overlay
+  //     overlay.classList.replace('overlay-slide-right', 'overlay-slide-left');
+  //     // Animate Out - Nav Items
+  //     navAnimation('in', 'out');
+  //   }
+  // }
 
-  
   return (
     <div className="App">
+      <div className="text-gray-600">teádasdsadadst</div>
+
       <div className="main">
         <div className="btn-config">
           <i className="bx bx-cog bx-spin" />
@@ -67,6 +68,7 @@ function App() {
             </ul>
           </nav>
         </div>
+
         {/* HAMBURGER MENU */}
         <div className="hamburger-menu" id="hamburger-menu">
           <div className="menu-bar1" />
@@ -76,17 +78,14 @@ function App() {
         {/* SECTIONS */}
         <section>
           <h1 className="task-header-title">Mon Sep 11 2023</h1>
-          <div className="task-tools">
-            <div className="task-count">0 task</div>
-            <div className="task-filters">
-              <button className="task-filter is-active">Previous month</button>
-              <button className="task-filter">This month</button>
-            </div>
-          </div>
-          <form className="task-form">
+          
+
+          <Select />
+
+          {/* <form className="task-form">
             <input className="task-input" placeholder="Add a new task..." autofocus="true" />
             <button className="task-button">Add Task</button>
-          </form>
+          </form> */}
           <div className="task-list">
             <div className="task-item">
               <input className="task-status" type="checkbox" data-id={-4} />
