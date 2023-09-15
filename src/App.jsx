@@ -2,8 +2,23 @@
 
 import React, { useState } from 'react';
 import { Select } from './components';
-
+import COLOR from './assets/theme/color.json';
 import './App.css';
+import { convertCurrency } from './utils/helper';
+
+const rose = {
+  50: '#fff1f2',
+  100: '#ffe4e6',
+  200: '#fecdd3',
+  300: '#fda4af',
+  400: '#fb7185',
+  500: '#f43f5e',
+  600: '#e11d48',
+  700: '#be123c',
+  800: '#9f1239',
+  900: '#881337',
+  950: '#4c0519',
+};
 
 function App() {
   // const [startDate, setStartDate] = useState(new Date());
@@ -31,7 +46,7 @@ function App() {
     <div className="App">
       <div className="text-gray-600">teádasdsadadst</div>
 
-      <div className="main">
+      <div className="main ">
         <div className="btn-config">
           <i className="bx bx-cog bx-spin" />
         </div>
@@ -76,11 +91,34 @@ function App() {
           <div className="menu-bar3" />
         </div>
         {/* SECTIONS */}
-        <section>
+        <section className='homePage overflow-auto'>
           <h1 className="task-header-title">Mon Sep 11 2023</h1>
-          
 
           <Select />
+
+          <div className=' bg-slate-300 rounded m-5'>
+            <div className='flex flex-row px-5 py-2'>
+              <span className='self-center'>18</span>
+              <div className='w-full mx-5'>
+                <div className=''>Hôm nay</div>
+                <div className=''>15/09</div>
+              </div>
+              <span className='self-center'>{convertCurrency(1000000)}</span>
+            </div>
+          </div>
+
+          {/* {Object.entries(COLOR).map(([key, value], index) => (
+            <div key={index}>
+              {key}
+              <div className="grid grid-cols-12 gap-12">
+                {Object.entries(value).map(([colorKey, colorValue], indexColor) => (
+                  <div key={indexColor} className={`w-10 h-10 me-5 rounded`} style={{ backgroundColor: colorValue }}>
+                    1
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))} */}
 
           {/* <form className="task-form">
             <input className="task-input" placeholder="Add a new task..." autofocus="true" />
